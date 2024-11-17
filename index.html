@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
+  <title>Frontend Mentor | Order summary card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+    body{
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(14,14,14);
+      margin: 0;
+      font-family: "Red Hat Display", serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    #main-container{
+      display: flex;
+      background-color: hsl(225, 100%, 94%);
+      width: 1440px;
+      height: 100vh;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      background-image: url('./images/pattern-background-desktop.svg');
+      background-repeat: no-repeat;
+    }
+
+    #inner-card{
+      position: absolute;
+      margin: 0px;
+      width: 450px;
+      height: 700px;
+      background-color: white;
+      border-radius: 22.5px;
+      overflow: hidden;
+      top: 100px;
+    }
+
+    h1{
+      margin: 0;
+      padding-top: 40px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 900;
+      color: #252525;
+    }
+
+    .paragraph > p{
+      text-align: center;
+      padding-left: 50px;
+      padding-right: 50px;
+      line-height: 1.6;
+      color: hsl(224, 23%, 55%);
+      letter-spacing: 0.25px;
+    }
+
+    .price-tile{
+      display: flex;
+      background-color: hsl(225, 100%, 98.5%);
+      border-radius: 12.5px;
+      width: 350px;
+      height: 100px;
+      margin-left: 50px;
+      margin-right: 50px;
+      align-items: center;
+    }
+
+    .price-tile-left{
+      display: flex;
+      justify-content: center;
+      width: 25%;
+    }
+
+    .price-tile-middle{
+      width: 50%;
+      line-height: 1.5;
+    }
+
+    .price-tile-right{
+      width: 25%;
+    }
+
+    .price-title{ 
+      font-weight: 900;
+    }
+
+    .price-text{
+      color: hsl(224, 23%, 55%);
+    }
+
+    .price-tile-middle > p{
+      margin: 0;
+      padding: 0;   
+      font-size: 17px;   
+    }
+
+    .price-tile-right > p{
+      margin: 0;
+      padding: 0;  
+      text-decoration: underline;
+      color: hsl(245, 62%, 44%);    
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .submit-button{
+      display: flex;
+      height: 35px;
+      width: 350px;
+      background-color: hsl(245, 75%, 52%);
+      border-radius: 12.5px;
+      color: hsl(225, 100%, 98%);
+      font-weight: 700;
+      justify-content: center;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 7.5px 0;
+      margin-top: 30px;
+      box-shadow: 0px 17.5px 17.5px 2.5px rgb(196, 207, 245);
+    }
+
+    .cancel-button{
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      font-weight: 900;
+      font-size: 15px;
+      color: hsl(224, 23%, 55%);
+    }
+
+    .submit-button:hover{
+      opacity: 0.7;
+      cursor: pointer;
+    }
+
+    .cancel-button > p:hover{
+      color: black;
+      cursor: pointer;
+    }
+
+    .price-tile-right > p:hover{
+      text-decoration: none;
+      opacity: 0.7;
+      cursor: pointer;
+    }
+
+    @media (max-width: 450px) {
+
+    #main-container{
+      background-image: url('./images/pattern-background-mobile.svg');
+    }
+
+    #inner-card{
+      width: 325px;
+      height: 580px;
+      top: 40px;
+    }
+
+    .logo > img{
+      width: 100%;
+      height: auto;
+    }
+
+    h1{
+      padding-top: 30px;
+      font-size: 22px;
+    }
+
+    .paragraph > p{
+      font-size: 15px;
+      padding-left: 35px;
+      padding-right: 35px;
+      margin-bottom: 25px;
+    }
+
+    .price-tile{
+      width: 275px;
+      height: 90px;
+      margin-left: 25px;
+      margin-right: 25px;
+    }
+
+    .price-tile-left{
+      width: 27.5%;
+    }
+
+    .price-tile-middle{
+      width: 45%;
+    }
+
+    .price-tile-right{
+      width: 27.5%;
+    }
+
+    .price-tile-middle > p{
+      font-size: 14.5px;
+    }
+
+    .price-tile-right > p{   
+      font-size: 13px;
+    }
+
+    .submit-button{
+      width: 275px;
+      font-size: 15px;
+    }
+
+    .cancel-button{
+      margin-top: 10px;
+    }
+
+    }
+
+  </style>
+  
+</head>
+<body>
+
+  <div id="main-container">
+
+    <div id="inner-card">
+
+      <div class="logo">
+        <img src="./images/illustration-hero.svg" alt="illustration hero"/>
+      </div>
+
+      <h1>
+        Order Summary
+      </h1>
+      
+      <div class="paragraph">
+        <p>
+          You can now listen to millions of songs, audiobooks, and podcasts on any 
+            device anywhere you like!
+        </p>
+      </div>
+
+      <div class="price-tile">
+
+        <div class="price-tile-left">
+          <img src="./images/icon-music.svg" alt="icon music">
+        </div>
+
+        <div class="price-tile-middle">
+          <p class="price-title">Annual Plan</p>
+          <p class="price-text">$59.99/year</p>
+        </div>
+
+        <div class="price-tile-right">
+          <p>Change</p>
+        </div>
+
+      </div>
+
+      <div class="submit-button">
+        <p>Proceed to Payment</p>
+      </div>
+
+      <div class="cancel-button">
+        <p>Cancel Order</p>
+      </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
